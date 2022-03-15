@@ -25,7 +25,7 @@ public class DequeNodeTest {
     @Test
     public void ShouldGetCorrectElementAfterInitialized(){
         int expectedValue = 1;
-        int obtainedValue = (int) node.getItem();
+        int obtainedValue = (Integer) node.getItem();
         assertEquals(expectedValue, obtainedValue);
     }
 
