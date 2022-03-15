@@ -6,5 +6,9 @@ TestsCases:
         -ShouldNotBeFirstNodeAfterInitialized: Comprueba que el nodo añadido no es el primero despues de inicializar
         -ShouldBeLastNodeAfterInitialized: Comprueba que es el ultimo nodo despues de inicializar
         -ShouldBeTerminalNodeAfterInitialized: Comprueba que no hay nodo intermedio despues de inicializar
-        -
-
+        -ShouldAddNextElement: Comprueba que se inserta bien al siguiente en el constructor
+        -ShouldAddPreviousElement: Comprueba que se inserta bien al anterior en el constructor
+        -ShouldNotBeTerminalNodeIfHavePreviousAndNext: Comprueba que no es nodo terminal
+        -ShouldSetItem: Comprueba que se asigne bien el Item
+        -ShouldSetNext: Comprueba que se asigna bien el Siguiente
+        -ShouldSetPrevious: Comprueba que se asigna bien el Anterior
