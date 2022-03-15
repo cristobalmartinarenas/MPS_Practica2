@@ -78,6 +78,34 @@ public class DequeNodeTest {
         node2 = new DequeNode<Integer>(1, node, node3);
         assertTrue(node2.isNotATerminalNode());
     }
+    //-------------------------------------------------
+    @Test
+    public void ShouldSetItem() {
+        int Value = 2;
+        node.setItem(Value);
+        int expectedValue = Value;
+        int obtainedValue = (int) node.getItem();
+
+        assertEquals(expectedValue, obtainedValue);
+    }
+
+    @Test
+    public void ShouldSetNext() {
+        DequeNode expectedValue = node2;
+        node.setNext(node2);
+        DequeNode obtainedValue = node.getNext();
+
+        assertEquals(expectedValue, obtainedValue);
+    }
+
+    @Test
+    public void ShouldSetPrevious() {
+        DequeNode expectedValue = node2;
+        node.setPrevious(node2);
+        DequeNode obtainedValue = node.getPrevious();
+
+        assertEquals(expectedValue, obtainedValue);
+    }
 
 
 }
