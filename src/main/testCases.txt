@@ -1,0 +1,10 @@
+TestsCases:
+    DequeNodeTest:
+        -ShouldGetCorrectElementAfterInitialized: Comprueba que el primer elemento está bien inicializado
+        -ShouldNotHavePreviousAfterInitialized: Comprueba que el primer elemento no tiene elemento previo
+        -ShouldNotHaveNextAfterAfterInitialized: Comprueba que no tiene elemento siguiente despues de inicializar
+        -ShouldNotBeFirstNodeAfterInitialized: Comprueba que el nodo añadido no es el primero despues de inicializar
+        -ShouldBeLastNodeAfterInitialized: Comprueba que es el ultimo nodo despues de inicializar
+        -ShouldBeTerminalNodeAfterInitialized: Comprueba que no hay nodo intermedio despues de inicializar
+        -
+
