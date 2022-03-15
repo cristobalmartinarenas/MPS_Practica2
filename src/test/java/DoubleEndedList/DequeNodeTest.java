@@ -42,17 +42,17 @@ public class DequeNodeTest {
 
     @Test
     public void ShouldBeFirstNodeAfterInitialized() {
-        assertTrue(() -> node.isFirstNode());
+        assertTrue(node.isFirstNode());
     }
 
     @Test
     public void ShouldBeLastNodeAfterInitialized() {
-        assertTrue(() -> node.isLastNode());
+        assertTrue(node.isLastNode());
     }
 
     @Test
     public void ShouldBeTerminalNodeAfterInitialized() {
-        assertFalse(() -> node.isNotATerminalNode());
+        assertFalse(node.isNotATerminalNode());
     }
 
     //-------------------------------------------------
