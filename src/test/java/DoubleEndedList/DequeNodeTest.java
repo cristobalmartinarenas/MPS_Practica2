@@ -30,6 +30,14 @@ public class DequeNodeTest {
     }
 
     @Test
+    public void ShouldAddNextElement(){
+        DequeNode expectedValue = node3;
+        node2 = new DequeNode<Integer>(1, node3, node);
+        DequeNode obtainedValue = node2.getNext();
+        assertEquals(expectedValue,obtainedValue);
+    }
+
+    @Test
     public void ShouldNotHavePreviousAfterInitialized(){
         assertNull(node.getPrevious());
     }
