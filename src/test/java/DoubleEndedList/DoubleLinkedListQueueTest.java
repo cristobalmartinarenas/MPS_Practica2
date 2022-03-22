@@ -78,6 +78,14 @@ public class DoubleLinkedListQueueTest {
         list1.append(node2);
         
         assertEquals(list1.getAt(1),node2);
+    }
+
+    @Test
+    public void ShouldReturnTheNodeOfTheValue(){
+        list1.append(node1);
+        list1.append(node2);
+
+        assertEquals(list1.find(5),node2);
 
     }
 }
