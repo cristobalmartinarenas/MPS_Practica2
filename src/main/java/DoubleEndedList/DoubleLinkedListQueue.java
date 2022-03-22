@@ -15,6 +15,7 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
             firstNode = node;
         }
 
+        node.setPrevious(lastNode);
         lastNode = node;
     }
 
@@ -26,6 +27,7 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
             lastNode = node;
         }
 
+        node.setNext(firstNode);
         firstNode = node;
     }
 
