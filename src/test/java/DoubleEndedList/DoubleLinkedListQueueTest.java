@@ -53,6 +53,14 @@ public class DoubleLinkedListQueueTest {
 
         assertEquals(list1.peekFirst(), node2);
     }
+    @Test
+    public void ShouldReturnNullIfTheListIsEmpty(){
+        list1.append(node1);
+        list1.deleteLast();
+
+        assertEquals(list1,null);
+    }
+
 
     @Test
     public void ShouldDeleteNodeLastPosition() {
@@ -70,6 +78,10 @@ public class DoubleLinkedListQueueTest {
         list1.append(node2);
 
         assertEquals(list1.size(), 2);
+    }
+    @Test
+    public void ShouldReturn0IfTheListIsEmpty(){
+        assertEquals(0,list1.size());
     }
 
     @Test
