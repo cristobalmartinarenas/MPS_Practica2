@@ -11,14 +11,21 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
     public void append(DequeNode node) {
         if(lastNode != null){
             lastNode.setNext(node);
+        }else{
+            firstNode = node;
         }
 
         lastNode = node;
     }
 
     @Override
-    public void appendLeft(DequeNode node) {
-        firstNode.setPrevious(node);
+    public void appendLeft(DequeNode node){
+        if(firstNode != null){
+            firstNode.setPrevious(node);
+        }else{
+            lastNode = node;
+        }
+
         firstNode = node;
     }
 
