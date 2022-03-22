@@ -55,10 +55,12 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
     public int size() {
         DequeNode current = firstNode;
         int size = 0;
-        while(!current.isLastNode()){
+
+        while(current.getNext() != null){
             current = current.getNext();
             size++;
         }
+
         return size;
     }
 
