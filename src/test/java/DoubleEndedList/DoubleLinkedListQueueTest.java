@@ -95,4 +95,13 @@ public class DoubleLinkedListQueueTest {
         assertEquals(list1.find(5),node2);
 
     }
+
+    @Test
+    public void ShouldThrownAnExceptionIfTheNumberIsNotInTheList(){
+        list1.append(node1);
+        list1.append(node2);
+
+        assertNull(list1.find(2000));
+    }
+
 }
