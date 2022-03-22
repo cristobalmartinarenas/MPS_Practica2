@@ -76,8 +76,32 @@ public class DoubleLinkedListQueueTest {
     public void ShouldReturnTheNodeAtTheGivenPosition(){
         list1.append(node1);
         list1.append(node2);
+        
+        assertEquals(list1.getAt(1),node2);
+    }
+    @Test
+    public void ShouldThrownAnIndexOutOfBoundsExceptionIfThePositionIsBiggerThanSize(){
+        list1.append(node1);
+        list1.append(node2);
 
+        assertThrows(IndexOutOfBoundsException.class,()->list1.getAt(10));
+    }
 
+    @Test
+    public void ShouldReturnTheNodeOfTheValue(){
+        list1.append(node1);
+        list1.append(node2);
+
+        assertEquals(list1.find(5),node2);
 
     }
+
+    @Test
+    public void ShouldThrownAnExceptionIfTheNumberIsNotInTheList(){
+        list1.append(node1);
+        list1.append(node2);
+
+        assertNull(list1.find(2000));
+    }
+
 }
