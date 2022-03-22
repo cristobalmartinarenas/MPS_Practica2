@@ -137,4 +137,16 @@ public class DoubleLinkedListQueueTest {
 
 
     }
+
+    @Test
+    public void ShouldThrownAnExceptionIfTheNodeIsNotInTheList(){
+        DequeNode node3 = new DequeNode<Integer>(10, null, null);
+
+        list1.append(node1);
+        list1.append(node2);
+
+
+        assertThrows(IllegalArgumentException.class, () -> list1.delete(node3));
+
+    }
 }
