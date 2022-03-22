@@ -79,6 +79,13 @@ public class DoubleLinkedListQueueTest {
         
         assertEquals(list1.getAt(1),node2);
     }
+    @Test
+    public void ShouldThrownAnIndexOutOfBoundsExceptionIfThePositionIsBiggerThanSize(){
+        list1.append(node1);
+        list1.append(node2);
+
+        assertThrows(IndexOutOfBoundsException.class,()->list1.getAt(10));
+    }
 
     @Test
     public void ShouldReturnTheNodeOfTheValue(){
