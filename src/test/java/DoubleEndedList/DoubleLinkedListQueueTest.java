@@ -76,11 +76,8 @@ public class DoubleLinkedListQueueTest {
     public void ShouldReturnTheNodeAtTheGivenPosition(){
         list1.append(node1);
         list1.append(node2);
-
-        System.out.println(list1.getAt(1).getItem());
-        System.out.println(node2.getItem());
-
-
+        
+        assertEquals(list1.getAt(1),node2);
 
     }
 }
