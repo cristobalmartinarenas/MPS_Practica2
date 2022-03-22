@@ -53,12 +53,13 @@ public class DoubleLinkedListQueueTest {
 
         assertEquals(list1.peekFirst(), node2);
     }
+
     @Test
-    public void ShouldReturnNullIfTheListIsEmpty(){
+    public void ShouldReturnNullIfTheListIsEmpty() {
         list1.append(node1);
         list1.deleteLast();
 
-        assertEquals(list1,null);
+        assertEquals(list1, null);
     }
 
 
@@ -79,41 +80,61 @@ public class DoubleLinkedListQueueTest {
 
         assertEquals(list1.size(), 2);
     }
+
     @Test
-    public void ShouldReturn0IfTheListIsEmpty(){
-        assertEquals(0,list1.size());
+    public void ShouldReturn0IfTheListIsEmpty() {
+        assertEquals(0, list1.size());
     }
 
     @Test
-    public void ShouldReturnTheNodeAtTheGivenPosition(){
-        list1.append(node1);
-        list1.append(node2);
-        
-        assertEquals(list1.getAt(1),node2);
-    }
-    @Test
-    public void ShouldThrownAnIndexOutOfBoundsExceptionIfThePositionIsBiggerThanSize(){
+    public void ShouldReturnTheNodeAtTheGivenPosition() {
         list1.append(node1);
         list1.append(node2);
 
-        assertThrows(IndexOutOfBoundsException.class,()->list1.getAt(10));
+        assertEquals(list1.getAt(1), node2);
     }
 
     @Test
-    public void ShouldReturnTheNodeOfTheValue(){
+    public void ShouldThrownAnIndexOutOfBoundsExceptionIfThePositionIsBiggerThanSize() {
         list1.append(node1);
         list1.append(node2);
 
-        assertEquals(list1.find(5),node2);
+        assertThrows(IndexOutOfBoundsException.class, () -> list1.getAt(10));
+    }
+
+    @Test
+    public void ShouldReturnTheNodeOfTheValue() {
+        list1.append(node1);
+        list1.append(node2);
+
+        assertEquals(list1.find(5), node2);
 
     }
 
     @Test
-    public void ShouldThrownAnExceptionIfTheNumberIsNotInTheList(){
+    public void ShouldThrownAnExceptionIfTheNumberIsNotInTheList() {
         list1.append(node1);
         list1.append(node2);
 
         assertNull(list1.find(2000));
     }
 
+
+    @Test
+    public void ShouldDeleteTheGivenNode() {
+        DequeNode node3 = new DequeNode<Integer>(10, null, null);
+        list1.append(node1);
+        list1.append(node2);
+        list1.append(node3);
+
+        //System.out.println(list1.size());
+        list1.delete(node2);
+        //System.out.println(list1.size());
+
+        assertEquals(list1.size(), 2);
+        assertEquals(list1.peekFirst(), node1);
+        assertEquals(list1.peekLast(), node3);
+
+
+    }
 }
