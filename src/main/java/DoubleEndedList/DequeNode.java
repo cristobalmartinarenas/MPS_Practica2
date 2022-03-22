@@ -6,7 +6,7 @@ package DoubleEndedList;
  *
  * @param <T>
  */
-public class DequeNode<T extends Comparable> {
+public class DequeNode<T> {
 
     private T item;
     private DequeNode<T> next;

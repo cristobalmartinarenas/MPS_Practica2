@@ -1,14 +1,14 @@
 package DoubleEndedList;
 
-import java.util.Queue;
-
-public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQueue{
+public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T>{
 
     private DequeNode lastNode;
     private DequeNode firstNode;
 
     @Override
-    public void append(DequeNode node) {
+    public void append(DequeNode<T> node) {
+        if(node == null){ throw new IllegalArgumentException("Appended node cannot be null"); }
+
         if(lastNode != null){
             lastNode.setNext(node);
         }else{
@@ -20,7 +20,9 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
     }
 
     @Override
-    public void appendLeft(DequeNode node){
+    public void appendLeft(DequeNode<T> node){
+        if(node == null){ throw new IllegalArgumentException("Appended node cannot be null"); }
+
         if(firstNode != null){
             firstNode.setPrevious(node);
         }else{
@@ -66,22 +68,24 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
         return size;
     }
 
-    public DequeNode getAt(int position){
-        DequeNode sol = firstNode;
+    public DequeNode<T> getAt(int position){
+        if(position < 0) { throw new IllegalArgumentException("Position cannot be negative");}
+
+        DequeNode<T> sol = firstNode;
 
         for(int i = 1; i < position; i++){
             sol = firstNode.getNext();
 
             if(sol == null){
-                throw(new IllegalArgumentException("Index out of bounds: " + position));
+                throw(new IndexOutOfBoundsException("Index out of bounds: " + position));
             }
         }
 
         return sol;
     }
 
-    public DequeNode find(T item){
-        DequeNode node = firstNode;
+    public DequeNode<T> find(T item){
+        DequeNode<T> node = firstNode;
 
         while(node.getNext() != null){
             if(node.getItem() == item) { break;}
