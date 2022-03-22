@@ -73,8 +73,8 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T>{
 
         DequeNode<T> sol = firstNode;
 
-        for(int i = 1; i < position; i++){
-            sol = firstNode.getNext();
+        for(int i = 0; i < position; i++){
+            sol = sol.getNext();
 
             if(sol == null){
                 throw(new IndexOutOfBoundsException("Index out of bounds: " + position));
