@@ -77,9 +77,6 @@ public class DoubleLinkedListQueueTest {
         list1.append(node1);
         list1.append(node2);
 
-        System.out.println(list1.getAt(1).getItem());
-        System.out.println(node2.getItem());
-
 
 
     }

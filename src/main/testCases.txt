@@ -12,3 +12,12 @@ TestsCases:
         -ShouldSetItem: Comprueba que se asigne bien el Item
         -ShouldSetNext: Comprueba que se asigna bien el Siguiente
         -ShouldSetPrevious: Comprueba que se asigna bien el Anterior
+
+    DoubleLinkedListQueueTest:
+        -ShouldAppendANodeLastPosition: Comprueba que se inserte un nodo al final correctamente
+        -ShouldThrowAnExceptionIllegalArgumentWhenAppendNulls: Comprueba que se lance un error si se interta insertar un nodo nulo
+        -ShouldAppendANodeFirstPosition: Comprueba que se inserte un nodo al principio correctamente
+        -ShouldDeleteNodeFirstPosition: Comprueba que se elimine el primer nodo correctamente
+        -ShouldDeleteNodeLastPosition: Comprueba que se elimine el ultimo nodo correctamente
+        -ShouldReturnTheSizeOfTheList: Comprueba que se obtenga el tamaño de la lista correctamente
+        -ShouldReturnTheNodeAtTheGivenPosition: Comprueba que se obtiene el nodo en la posicion indicada
