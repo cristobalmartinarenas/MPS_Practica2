@@ -35,6 +35,27 @@ public class DoubleLinkedListQueueTest {
         assertEquals(list1.peekFirst(), node2);
 
     }
+    @Test
+    public void ShouldDeleteNodeFirstPosition(){
+        DoubleLinkedListQueue list1 = new DoubleLinkedListQueue<Integer>();
+        list1.append(node1);
+        list1.append(node2);
+
+        list1.deleteFirst();
+
+        assertEquals(list1.peekFirst(),node2);
+    }
+    @Test
+    public void ShouldDeleteNodeLastPosition(){
+        DoubleLinkedListQueue list1 = new DoubleLinkedListQueue<Integer>();
+        list1.append(node1);
+        list1.append(node2);
+
+        list1.deleteLast();
+
+        assertEquals(list1.peekLast(),node1);
+    }
+
 
 
 }
