@@ -2,14 +2,17 @@ package DoubleEndedList;
 
 import java.util.Queue;
 
-public class DoubleLinkedListQueue<T> implements DoubleEndedQueue{
+public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQueue{
 
     private DequeNode lastNode;
     private DequeNode firstNode;
 
     @Override
     public void append(DequeNode node) {
-        lastNode.setNext(node);
+        if(lastNode != null){
+            lastNode.setNext(node);
+        }
+
         lastNode = node;
     }
 
@@ -50,5 +53,36 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue{
             size++;
         }
         return size;
+    }
+
+    public DequeNode getAt(int position){
+        DequeNode sol = firstNode;
+
+        for(int i = 1; i < position; i++){
+            sol = firstNode.getNext();
+
+            if(sol == null){
+                throw(new IllegalArgumentException("Index out of bounds: " + position));
+            }
+        }
+
+        return sol;
+    }
+
+    public DequeNode find(T item){
+        DequeNode node = firstNode;
+
+        while(node.getNext() != null){
+            if(node.getItem() == item) { break;}
+
+            node = node.getNext();
+        }
+
+        if(node == lastNode && node.getItem() != item){
+            //No node has been found
+            node = null;
+        }
+
+        return node;
     }
 }

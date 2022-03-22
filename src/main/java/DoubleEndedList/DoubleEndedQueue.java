@@ -2,7 +2,7 @@ package DoubleEndedList;
 
 import DoubleEndedList.DequeNode;
 
-public interface DoubleEndedQueue<T> {
+public interface DoubleEndedQueue<T extends Comparable> {
     // Basic operations
     void append(DequeNode<T> node) ;
     void appendLeft(DequeNode<T> node) ;
