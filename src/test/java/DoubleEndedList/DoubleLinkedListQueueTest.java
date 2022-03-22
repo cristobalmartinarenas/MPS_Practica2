@@ -14,7 +14,7 @@ public class DoubleLinkedListQueueTest {
     @BeforeEach
     public void init() {
         node1 = new DequeNode<Integer>(1, null, null);
-        node2 = new DequeNode<Integer>(1, null, null);
+        node2 = new DequeNode<Integer>(5, null, null);
         list1 = new DoubleLinkedListQueue<Integer>();
         list2 = new DoubleLinkedListQueue<>();
 
@@ -72,5 +72,15 @@ public class DoubleLinkedListQueueTest {
         assertEquals(list1.size(), 2);
     }
 
+    @Test
+    public void ShouldReturnTheNodeAtTheGivenPosition(){
+        list1.append(node1);
+        list1.append(node2);
 
+        System.out.println(list1.getAt(2).getItem());
+        System.out.println(node2.getItem());
+
+
+
+    }
 }
