@@ -100,4 +100,27 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T>{
 
         return node;
     }
+
+    public void delete(DequeNode<T> node){
+        if(node == firstNode){ deleteFirst(); return;}
+        if(node == lastNode){ deleteLast(); return;}
+
+        DequeNode currentNode = firstNode;
+
+        while(node.getNext() != null) {
+            if (currentNode != node) {
+                currentNode = currentNode.getNext();
+                continue;
+            }
+
+            currentNode.getPrevious().setNext(currentNode.getNext());
+            currentNode.getNext().setPrevious(currentNode.getPrevious());
+
+            currentNode = null;
+
+            return;
+        }
+
+        throw new IllegalArgumentException("Node is not in the list: " + node);
+    }
 }
