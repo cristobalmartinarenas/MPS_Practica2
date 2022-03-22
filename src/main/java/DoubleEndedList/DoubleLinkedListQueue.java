@@ -60,11 +60,15 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T>{
         DequeNode current = firstNode;
         int size = 1;
 
-        while(current.getNext() != null){
-            current = current.getNext();
-            size++;
-        }
+        if(current==null){
+            size=0;
+        }else {
 
+            while (current.getNext() != null) {
+                current = current.getNext();
+                size++;
+            }
+        }
         return size;
     }
 

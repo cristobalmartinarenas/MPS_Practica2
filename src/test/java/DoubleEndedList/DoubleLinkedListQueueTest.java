@@ -139,7 +139,7 @@ public class DoubleLinkedListQueueTest {
     }
 
     @Test
-    public void ShouldThrownAnExceptionIfTheNodeIsNotInTheList(){
+    public void ShouldThrownAnExceptionIfTheNodeIsNotInTheList() {
         DequeNode node3 = new DequeNode<Integer>(10, null, null);
 
         list1.append(node1);
