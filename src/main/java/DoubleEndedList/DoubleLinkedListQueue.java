@@ -1,6 +1,6 @@
 package DoubleEndedList;
 
-public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T>{
+public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQueue<T>{
 
     private DequeNode lastNode;
     private DequeNode firstNode;
@@ -126,5 +126,50 @@ public class DoubleLinkedListQueue<T> implements DoubleEndedQueue<T>{
         }
 
         throw new IllegalArgumentException("Node is not in the list: " + node);
+    }
+
+    public void sort(){
+        boolean isSorted = false;
+
+        while(!isSorted){
+            isSorted = true;
+
+            DequeNode prevNode = firstNode;
+            DequeNode currNode = firstNode.getNext();
+
+            while(currNode != null){
+                if(prevNode.getItem().compareTo(currNode.getItem()) > 0){
+                    isSorted = false;
+
+                    //Switch the nodes
+                    DequeNode auxPrev = prevNode.getPrevious();
+                    DequeNode auxNext = currNode.getNext();
+
+                    prevNode.setPrevious(currNode);
+                    prevNode.setNext(auxNext);
+
+                    currNode.setPrevious(auxPrev);
+                    currNode.setNext(prevNode);
+
+
+                    if(prevNode == firstNode){
+                        firstNode = currNode;
+                    }else{
+                        auxPrev.setNext(currNode);
+                    }
+
+                    if(currNode == lastNode){
+                        lastNode = prevNode;
+                    }else{
+                        auxNext.setPrevious(prevNode);
+                    }
+
+                    currNode = prevNode.getNext();
+                }else{
+                    prevNode = currNode;
+                    currNode = currNode.getNext();
+                }
+            }
+        }
     }
 }

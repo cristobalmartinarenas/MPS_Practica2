@@ -6,7 +6,7 @@ package DoubleEndedList;
  *
  * @param <T>
  */
-public class DequeNode<T> {
+public class DequeNode<T extends Comparable> {
 
     private T item;
     private DequeNode<T> next;
@@ -54,5 +54,13 @@ public class DequeNode<T> {
 
     public boolean isNotATerminalNode() {
         return (!isFirstNode() && !isLastNode());
+    }
+
+    @Override
+    public String toString(){
+        String prevString = previous == null? "null" : previous.getItem().toString();
+        String nextString = next == null? "null" : next.getItem().toString();
+
+        return "[" + prevString + ", " + item.toString() + ", " + nextString + "]";
     }
 }

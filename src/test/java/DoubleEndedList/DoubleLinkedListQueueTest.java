@@ -147,6 +147,31 @@ public class DoubleLinkedListQueueTest {
 
 
         assertThrows(IllegalArgumentException.class, () -> list1.delete(node3));
+    }
+
+    @Test
+    public void ShouldCorrectlySortList(){
+        list1.append(new DequeNode( 100, null, null));
+        list1.append(new DequeNode(12, null, null));
+        list1.append(new DequeNode(50, null, null));
+        list1.append(new DequeNode(0, null, null));
+        list1.append(new DequeNode(12, null, null));
+        list1.append(node1);
+        list1.append(node2);
+        list1.append(new DequeNode(2, null, null));
+
+        list1.sort();
+
+        int size = list1.size();
+        String list = "[";
+
+        for(int i = 0; i < size; i++){
+            list += list1.getAt(i).getItem().toString() + ", ";
+        }
+
+        list = list.substring(0, list.length() - 2) + "]";
+
+        System.out.println(list);
 
     }
 }
