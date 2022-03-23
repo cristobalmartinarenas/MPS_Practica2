@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">72 ms</div>
+                <div class="time" xmlns="">85 ms</div>
                 <h1>
-                    DoubleLinkedListQueueTest: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">14 total, </span><span class="error">1 error, </span><span class="passed">13 passed</span></strong>
+                    DoubleLinkedListQueueTest: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">18 total, </span><span class="passed">18 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -591,44 +591,29 @@ jQuery.cookie = function(name, value, options) {
             </div>
             <div id="content">
                 <ul id="tree">
-                    <li xmlns="" class="level top failed open">
+                    <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">72 ms</div>
+                                <div class="time">85 ms</div>
                             </em>DoubleLinkedListQueueTest</span>
                         <ul>
-                            <li class="level test failed open">
-                                <span><em class="time">
-                                        <div class="time">32 ms</div>
-                                    </em><em class="status">error</em>ShouldReturnNullIfTheListIsEmpty()</span>
-                                <ul>
-                                    <li class="text">
-                                        <span class="stderr">java.lang.NullPointerException: Cannot invoke "DoubleEndedList.DequeNode.setNext(DoubleEndedList.DequeNode)" because the return value of "DoubleEndedList.DequeNode.getPrevious()" is null<br/>	at DoubleEndedList.DoubleLinkedListQueue.deleteLast(DoubleLinkedListQueue.java:44)<br/>	at DoubleEndedList.DoubleLinkedListQueueTest.ShouldReturnNullIfTheListIsEmpty(DoubleLinkedListQueueTest.java:60)<br/>	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br/>	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br/>	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>	at java.base/java.lang.reflect.Method.invoke(Method.java:568)<br/>	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)<br/>	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)<br/>	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)<br/>	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)<br/>	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)<br/>	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)<br/>	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)<br/>	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)<br/>	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)<br/>	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)<br/>	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)<br/>	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)<br/>	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)<br/>	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)<br/>	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)<br/>	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)<br/>	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)<br/>	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)<br/>	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br/>	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)<br/>	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)<br/>	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br/>	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)<br/>	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)<br/>	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)<br/>	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)<br/>	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)<br/>	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)<br/>	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)<br/>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)<br/>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)<br/>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)<br/>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)<br/>	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)<br/>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)<br/>	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)<br/>	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)<br/>	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)<br/>	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)<br/>	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)<br/>	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)<br/>	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)<br/>	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)<br/>	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)<br/></span>
-                                    </li>
-                                </ul>
-                            </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">9 ms</div>
-                                    </em><em class="status">passed</em>ShouldThrownAnExceptionIfTheNodeIsNotInTheList()</span>
-                            </li>
-                            <li class="level test">
-                                <span><em class="time">
-                                        <div class="time">9 ms</div>
+                                        <div class="time">52 ms</div>
                                     </em><em class="status">passed</em>ShouldThrownAnIndexOutOfBoundsExceptionIfThePositionIsBiggerThanSize()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">4 ms</div>
+                                        <div class="time">9 ms</div>
                                     </em><em class="status">passed</em>ShouldDeleteNodeFirstPosition()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">2 ms</div>
+                                        <div class="time">1 ms</div>
                                     </em><em class="status">passed</em>ShouldReturnTheSizeOfTheList()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">3 ms</div>
+                                        <div class="time">1 ms</div>
                                     </em><em class="status">passed</em>ShouldReturn0IfTheListIsEmpty()</span>
                             </li>
                             <li class="level test">
@@ -638,13 +623,33 @@ jQuery.cookie = function(name, value, options) {
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">2 ms</div>
+                                        <div class="time">1 ms</div>
                                     </em><em class="status">passed</em>ShouldReturnTheNodeAtTheGivenPosition()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
                                         <div class="time">2 ms</div>
+                                    </em><em class="status">passed</em>ShouldBeEmptyIfDeleteAllElements()</span>
+                            </li>
+                            <li class="level test">
+                                <span><em class="time">
+                                        <div class="time">1 ms</div>
+                                    </em><em class="status">passed</em>ShouldAppendANodeFirstPositionEmptyList()</span>
+                            </li>
+                            <li class="level test">
+                                <span><em class="time">
+                                        <div class="time">1 ms</div>
+                                    </em><em class="status">passed</em>ShouldBeEmptyIfDeleteAllFirstElements()</span>
+                            </li>
+                            <li class="level test">
+                                <span><em class="time">
+                                        <div class="time">1 ms</div>
                                     </em><em class="status">passed</em>ShouldDeleteNodeLastPosition()</span>
+                            </li>
+                            <li class="level test">
+                                <span><em class="time">
+                                        <div class="time">1 ms</div>
+                                    </em><em class="status">passed</em>ShouldCorrectlySortList()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
@@ -652,24 +657,30 @@ jQuery.cookie = function(name, value, options) {
                                     </em><em class="status">passed</em>ShouldAppendANodeLastPosition()</span>
                             </li>
                             <li class="level test">
-                                <span><em class="time">
-                                        <div class="time">1 ms</div>
-                                    </em><em class="status">passed</em>ShouldDeleteTheGivenNode()</span>
+                                <span><em class="time"></em><em class="status">passed</em>ShouldReturnNullIfTheNumberIsNotInTheList()</span>
+                            </li>
+                            <li class="level test">
+                                <span><em class="time"></em><em class="status">passed</em>ShouldDeleteTheGivenNode()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">2 ms</div>
-                                    </em><em class="status">passed</em>ShouldThrownAnExceptionIfTheNumberIsNotInTheList()</span>
+                                        <div class="time">4 ms</div>
+                                    </em><em class="status">passed</em>ShouldThrownAnExceptionIfTheNodeToDeleteIsNotInTheList()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">1 ms</div>
+                                        <div class="time">3 ms</div>
                                     </em><em class="status">passed</em>ShouldAppendANodeFirstPosition()</span>
                             </li>
                             <li class="level test">
                                 <span><em class="time">
-                                        <div class="time">2 ms</div>
+                                        <div class="time">3 ms</div>
                                     </em><em class="status">passed</em>ShouldThrowAnExceptionIllegalArgumentWhenAppendNulls()</span>
+                            </li>
+                            <li class="level test">
+                                <span><em class="time">
+                                        <div class="time">2 ms</div>
+                                    </em><em class="status">passed</em>ShouldCorrectlySortListMoreThan2Elements()</span>
                             </li>
                         </ul>
                     </li>
@@ -677,7 +688,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Generated by IntelliJ IDEA on 3/23/22, 11:43 AM</p>
+            <p>Generated by IntelliJ IDEA on 3/23/22, 4:45 PM</p>
         </div>
     </body>
 </html>
