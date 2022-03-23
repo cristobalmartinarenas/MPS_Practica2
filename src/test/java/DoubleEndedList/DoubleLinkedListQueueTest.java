@@ -8,25 +8,35 @@ public class DoubleLinkedListQueueTest {
 
     private DequeNode node1;
     private DequeNode node2;
+    private DequeNode node3;
     private DoubleLinkedListQueue list1;
     private DoubleLinkedListQueue list2;
 
     @BeforeEach
     public void init() {
-        node1 = new DequeNode<Integer>(1, null, null);
-        node2 = new DequeNode<Integer>(5, null, null);
-        list1 = new DoubleLinkedListQueue<Integer>();
-        list2 = new DoubleLinkedListQueue<>();
+        node1 = new DequeNode<Integer>(5, null, null);
+        node2 = new DequeNode<Integer>(1, null, null);
+        node3 = new DequeNode<Integer>(2, null, null);
 
+        list1 = new DoubleLinkedListQueue<Integer>();
+        list1.append(node1);
+        list1.append(node2);
+
+        list2 = new DoubleLinkedListQueue<>();
     }
 
 
     @Test
     public void ShouldAppendANodeLastPosition() {
-        list1.append(node1);
-        list1.append(node2);
+        list1.append(node3);
+        assertEquals(list1.peekLast(), node3);
+    }
 
-        assertEquals(list1.peekLast(), node2);
+    @Test
+    public void ShouldAppendANodeFirstPositionEmptyList(){
+        list2.appendLeft(node3);
+        assertEquals(list2.peekFirst(), node3);
+        assertEquals(list2.peekLast(), node3);
     }
 
     @Test
@@ -38,36 +48,40 @@ public class DoubleLinkedListQueueTest {
 
     @Test
     public void ShouldAppendANodeFirstPosition() {
-        list1.appendLeft(node1);
-        list1.appendLeft(node2);
-
-        assertEquals(list1.peekFirst(), node2);
+        list1.appendLeft(node3);
+        assertEquals(list1.peekFirst(), node3);
     }
 
     @Test
     public void ShouldDeleteNodeFirstPosition() {
-        list1.append(node1);
-        list1.append(node2);
-
         list1.deleteFirst();
 
         assertEquals(list1.peekFirst(), node2);
     }
 
     @Test
-    public void ShouldReturnNullIfTheListIsEmpty() {
-        list1.append(node1);
+    public void ShouldBeEmptyIfDeleteAllElements() {
+        list1.deleteLast();
         list1.deleteLast();
 
-        assertEquals(list1, null);
+        assertEquals(0, list1.size());
+        assertNull(list1.peekFirst());
+        assertNull(list1.peekLast());
+    }
+
+    @Test
+    public void ShouldBeEmptyIfDeleteAllFirstElements() {
+        list1.deleteFirst();
+        list1.deleteFirst();
+
+        assertEquals(0, list1.size());
+        assertNull(list1.peekFirst());
+        assertNull(list1.peekLast());
     }
 
 
     @Test
     public void ShouldDeleteNodeLastPosition() {
-        list1.append(node1);
-        list1.append(node2);
-
         list1.deleteLast();
 
         assertEquals(list1.peekLast(), node1);
@@ -75,47 +89,32 @@ public class DoubleLinkedListQueueTest {
 
     @Test
     public void ShouldReturnTheSizeOfTheList() {
-        list1.append(node1);
-        list1.append(node2);
-
         assertEquals(list1.size(), 2);
     }
 
     @Test
     public void ShouldReturn0IfTheListIsEmpty() {
-        assertEquals(0, list1.size());
+        assertEquals(0, list2.size());
     }
 
     @Test
     public void ShouldReturnTheNodeAtTheGivenPosition() {
-        list1.append(node1);
-        list1.append(node2);
-
         assertEquals(list1.getAt(1), node2);
     }
 
     @Test
     public void ShouldThrownAnIndexOutOfBoundsExceptionIfThePositionIsBiggerThanSize() {
-        list1.append(node1);
-        list1.append(node2);
-
         assertThrows(IndexOutOfBoundsException.class, () -> list1.getAt(10));
     }
 
     @Test
     public void ShouldReturnTheNodeOfTheValue() {
-        list1.append(node1);
-        list1.append(node2);
-
-        assertEquals(list1.find(5), node2);
+        assertEquals(list1.find(1), node2);
 
     }
 
     @Test
-    public void ShouldThrownAnExceptionIfTheNumberIsNotInTheList() {
-        list1.append(node1);
-        list1.append(node2);
-
+    public void ShouldReturnNullIfTheNumberIsNotInTheList() {
         assertNull(list1.find(2000));
     }
 
@@ -123,55 +122,34 @@ public class DoubleLinkedListQueueTest {
     @Test
     public void ShouldDeleteTheGivenNode() {
         DequeNode node3 = new DequeNode<Integer>(10, null, null);
-        list1.append(node1);
-        list1.append(node2);
-        list1.append(node3);
 
-        //System.out.println(list1.size());
+        list1.append(node3);
         list1.delete(node2);
-        //System.out.println(list1.size());
 
         assertEquals(list1.size(), 2);
         assertEquals(list1.peekFirst(), node1);
         assertEquals(list1.peekLast(), node3);
-
-
     }
 
     @Test
-    public void ShouldThrownAnExceptionIfTheNodeIsNotInTheList() {
+    public void ShouldThrownAnExceptionIfTheNodeToDeleteIsNotInTheList() {
         DequeNode node3 = new DequeNode<Integer>(10, null, null);
-
-        list1.append(node1);
-        list1.append(node2);
-
 
         assertThrows(IllegalArgumentException.class, () -> list1.delete(node3));
     }
 
     @Test
     public void ShouldCorrectlySortList(){
-        list1.append(new DequeNode( 100, null, null));
-        list1.append(new DequeNode(12, null, null));
-        list1.append(new DequeNode(50, null, null));
-        list1.append(new DequeNode(0, null, null));
-        list1.append(new DequeNode(12, null, null));
-        list1.append(node1);
-        list1.append(node2);
-        list1.append(new DequeNode(2, null, null));
-
         list1.sort();
 
-        int size = list1.size();
-        String list = "[";
+        assertEquals(node1, list1.peekLast());
+    }
 
-        for(int i = 0; i < size; i++){
-            list += list1.getAt(i).getItem().toString() + ", ";
-        }
+    @Test
+    public void ShouldCorrectlySortListMoreThan2Elements(){
+        list1.append(node3);
+        list1.sort();
 
-        list = list.substring(0, list.length() - 2) + "]";
-
-        System.out.println(list);
-
+        assertEquals(node2, list1.peekFirst());
     }
 }

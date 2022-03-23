@@ -35,14 +35,24 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
 
     @Override
     public void deleteFirst() {
-        firstNode.getNext().setPrevious(null);
-        firstNode = firstNode.getNext();
+        if(firstNode.getNext() != null) {
+            firstNode.getNext().setPrevious(null);
+            firstNode = firstNode.getNext();
+        }else{
+            firstNode = null;
+            lastNode = null;
+        }
     }
 
     @Override
     public void deleteLast() {
-        lastNode.getPrevious().setNext(null);
-        lastNode = lastNode.getPrevious();
+        if(lastNode.getPrevious() != null) {
+            lastNode.getPrevious().setNext(null);
+            lastNode = lastNode.getPrevious();
+        }else{
+            firstNode = null;
+            lastNode = null;
+        }
     }
 
     @Override
