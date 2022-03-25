@@ -152,4 +152,10 @@ public class DoubleLinkedListQueueTest {
 
         assertEquals(node2, list1.peekFirst());
     }
+    @Test
+    public void ShouldThrownAnExpecionIfTheListIsEmpty(){
+        assertThrows(IllegalArgumentException.class,()->list2.sort());
+
+    }
+
 }

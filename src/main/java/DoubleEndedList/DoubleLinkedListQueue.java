@@ -141,6 +141,10 @@ public class DoubleLinkedListQueue<T extends Comparable> implements DoubleEndedQ
     public void sort(){
         boolean isSorted = false;
 
+        if(firstNode==null){
+            throw new IllegalArgumentException("Can't sort empty list");
+        }
+
         while(!isSorted){
             isSorted = true;
 
