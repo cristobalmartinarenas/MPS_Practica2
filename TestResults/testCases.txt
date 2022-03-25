@@ -32,3 +32,4 @@ TestsCases:
         -ShouldThrownAnExceptionIfTheNodeToDeleteIsNotInTheList: Comprueba que se devuelva una excepcion si se intenta borrar un nodo que no este en la lista
         -ShouldCorrectlySortList: Comprueba que se ordene la lista
         -ShouldCorrectlySortListMoreThan2Elements: Comprueba que se ordene la lista si tiene mas de 2 elementos
+        -ShouldThrownAnExpecionIfTheListIsEmpty: Comprueba que la lista que le mandan no es vacía, y si lo es lanza una excepcion
